@@ -7846,13 +7846,20 @@ var tagsList = [{
   name: '精选农场' },
 {
   id: 7,
-  name: '品牌故事' }];var _default =
+  name: '品牌故事' }];
+
+
+var msgs = [
+'果小地以城市、企业、个人为圈层，为会员提供各种折扣，随时关注群动态',
+'随时关注所在群动态，享受超低折扣，及特价商品，超始折扣为88折',
+'免费开通88折会员卡，并惠及朋友，请点咨询按钮'];var _default =
 
 
 
 {
   carouselList: carouselList,
-  tagsList: tagsList };exports.default = _default;
+  tagsList: tagsList,
+  msgs: msgs };exports.default = _default;
 
 /***/ })
 

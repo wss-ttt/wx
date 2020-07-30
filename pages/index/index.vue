@@ -15,6 +15,13 @@
         <li v-for="(item, index) in tagList2" :key="index">{{ item.name }}</li>
       </ul>
     </view>
+    <view class="msgs">
+      <swiper class="swiper" :autoplay="swiperOptions2.autoplay" :vertical="swiperOptions2.vertical">
+        <swiper-item class="swiper-slide" v-for="(item, index) in MockData.msgs" :key="index">
+          {{item}}
+        </swiper-item>
+      </swiper>
+    </view>
     <button type="default" @click="getData">确定</button>
   </view>
 </template>
@@ -27,6 +34,10 @@ export default {
       swiperOptions: {
         indicatorDots: true, // 指示点
         autoplay: true, // 自动轮播
+      },
+      swiperOptions2: {
+        autoplay: true, // 自动轮播
+        vertical: true // 纵向
       }
     }
   },
@@ -51,12 +62,14 @@ ul, li {
   margin: 0;
   padding: 0;
 }
+// banner 模块
 .banner {
   .swiper {
     width: 100%;
     height: 303px;
   }
 }
+// tags模块
 .tags {
   margin-top: 13px;
   ul {
@@ -80,6 +93,33 @@ ul, li {
     &:last-child {
       margin-top: 6px;
     }
+  }
+}
+
+// msgs模块
+.msgs {
+  height: 30px;
+  border: 1px solid #ccc;
+  font-size: 14px;
+  border-top: 1px dashed #cdd0cc;
+  border-bottom: 1px dashed #cdd0cc;
+  margin-top: 20px;
+  padding: 0 15px;
+  .swiper {
+    height: 100%;
+    .swiper-slide {
+      background: url('~@/static/icon-tips.png') no-repeat;
+      background-size: 14px 14px;
+      background-position: left center;
+      padding: 0 20px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;  /*不换行*/
+    }
+  }
+  uni-swiper-item {
+    display: flex;
+    align-items: center;
   }
 }
   

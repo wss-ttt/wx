@@ -151,7 +151,21 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
 
 
 
+
+
+
+
+
+
+
 var _data = _interopRequireDefault(__webpack_require__(/*! @/data.js */ 42));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} //
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -173,6 +187,8 @@ var _data = _interopRequireDefault(__webpack_require__(/*! @/data.js */ 42));fun
 //
 var _default = { data: function data() {return { MockData: _data.default, swiperOptions: { indicatorDots: true, // 指示点
         autoplay: true // 自动轮播
+      }, swiperOptions2: { autoplay: true, // 自动轮播
+        vertical: true // 纵向
       } };}, computed: { tagList1: function tagList1() {return _data.default.tagsList.slice(0, 4);}, tagList2: function tagList2() {return _data.default.tagsList.slice(4);} }, mounted: function mounted() {console.log(_data.default);}, methods: {} };exports.default = _default;
 
 /***/ }),
