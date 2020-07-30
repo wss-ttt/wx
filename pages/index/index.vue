@@ -25,7 +25,28 @@
     <view class="product">
       <view class="product-item">
         <view class="title">
-          <text class="letter" v-for="(item, index) in title" :key="index">{{item}}</text>
+          <view class="text">
+            <text class="letter" v-for="(item, index) in title" :key="index">{{item}}</text>
+          </view>
+          <view class="more">更多>></view>
+        </view>
+        <view class="intro">
+          <view class="p-i">
+            <view class="con">
+              <view class="pic">
+                <img src="~@/static/img1.jpg" alt="">
+              </view>
+              <view class="info">
+                <view class="title">定制款|酷礼遇</view>
+                <view class="describe">办公族专享｜实价24.2元/盒/次起</view>
+                <view class="price">
+                  <text class="num">100</text>
+                  <view class="sell-num">1791付款</view>
+                  <view class="label">...</view>
+                </view>
+              </view>
+            </view>
+          </view>
         </view>
       </view>
     </view>
@@ -170,64 +191,107 @@ ul, li {
 // product模块
 .product {
   .title {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 42rpx;
-    color: #5a961e;
-    .letter {
-      padding: 0 10px;
-      border-left: 1px solid #5a961e;
+    position: relative;
+    .text {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 42rpx;
+      color: #5a961e;
       position: relative;
-      &:first-child {
-        &::before {
-          content: '';
-          display: block;
-          width: 35px;
-          height: 1px;
-          background: #787878;
-          position: absolute;
-          top: 50%;
-          left: 0;
-          transform: translate(-100%, -50%);
+      .letter {
+        padding: 0 10px;
+        border-left: 1px solid #5a961e;
+        position: relative;
+        &:first-child {
+          &::before {
+            content: '';
+            display: block;
+            width: 35px;
+            height: 1px;
+            background: #787878;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translate(-100%, -50%);
+          }
+          &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            border: 1px solid #787878;
+            top: 50%;
+            transform: translate(0, -50%);
+            left: -45px;
+          }
         }
-        &::after {
-          content: '';
-          display: block;
-          position: absolute;
-          width: 8px;
-          height: 8px;
-          border-radius: 50%;
-          border: 1px solid #787878;
-          top: 50%;
-          transform: translate(0, -50%);
-          left: -45px;
+        &:last-child {
+          border-right: 1px solid #5a961e;
+          &::after {
+            content: '';
+            display: block;
+            width: 35px;
+            height: 1px;
+            background: #787878;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translate(100%, -50%);
+          }
+          &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            border: 1px solid #787878;
+            top: 50%;
+            transform: translate(0, -50%);
+            right: -45px;
+          }
         }
       }
-      &:last-child {
-        border-right: 1px solid #5a961e;
-        &::after {
-          content: '';
-          display: block;
-          width: 35px;
-          height: 1px;
-          background: #787878;
-          position: absolute;
-          top: 50%;
-          right: 0;
-          transform: translate(100%, -50%);
+    }
+    .more {
+      position: absolute;
+      font-size: 22rpx;
+      right: 5px;
+      top: 50%;
+      transform: translate(0, -50%);
+    }
+  }
+  .intro {
+    padding: 0 5px;
+    .p-i {
+      width: 50%;
+      height: 140px;
+      border: 1px solid red;
+      padding: 0 5px;
+      .con {
+        width: 100%;
+        height: 100%;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        .pic {
+          width: 100%;
+          height: 85px;
+          img {
+            width: 100%;
+            height: 100%;
+          }
         }
-        &::before {
-          content: '';
-          display: block;
-          position: absolute;
-          width: 8px;
-          height: 8px;
-          border-radius: 50%;
-          border: 1px solid #787878;
-          top: 50%;
-          transform: translate(0, -50%);
-          right: -45px;
+        .info {
+          .title {}
+          .describe {}
+          .price {
+            .num {}
+            .sell-num {}
+            .label {}
+          }
         }
       }
     }
