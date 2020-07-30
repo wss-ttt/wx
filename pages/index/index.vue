@@ -81,7 +81,6 @@ ul, li {
     li {
       width: calc(100% / 4 - 16px);
       padding: 6px 9px 6px 0;
-      background: #828c6e;
       text-align: right;
       border: 1px solid #ccc;
       border-radius: 4px;
@@ -89,9 +88,43 @@ ul, li {
       &:last-child {
         margin-right: 0;
       }
+      &:nth-child(1) {
+        background: url('~@/static/resource/icon-1.png') #828c6e no-repeat left center;
+        background-size: 19px;
+      }
+      &:nth-child(2) {
+        background: url('~@/static/resource/icon-2.png') #828c6e no-repeat left center;
+        background-size: 19px;
+      }
+      &:nth-child(3) {
+        background: url('~@/static/resource/icon-3.png') #828c6e no-repeat left center;
+        background-size: 19px;
+      }
+      &:nth-child(4) {
+        background: url('~@/static/resource/icon-4.png') #828c6e no-repeat left center;
+        background-size: 19px;
+      }
     }
     &:last-child {
       margin-top: 6px;
+      li {
+        &:nth-child(1) {
+          background: url('~@/static/resource/icon-5.png') #828c6e no-repeat left center;
+          background-size: 19px;
+        }
+        &:nth-child(2) {
+          background: url('~@/static/resource/icon-6.png') #828c6e no-repeat left center;
+          background-size: 19px;
+        }
+        &:nth-child(3) {
+          background: url('~@/static/resource/icon-7.png') #828c6e no-repeat left center;
+          background-size: 19px;
+        }
+        &:nth-child(4) {
+          background: url('~@/static/resource/icon-8.png') #828c6e no-repeat left center;
+          background-size: 19px;
+        }
+      }
     }
   }
 }
