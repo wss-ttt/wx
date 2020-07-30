@@ -22,6 +22,13 @@
         </swiper-item>
       </swiper>
     </view>
+    <view class="product">
+      <view class="product-item">
+        <view class="title">
+          <text class="letter" v-for="(item, index) in title" :key="index">{{item}}</text>
+        </view>
+      </view>
+    </view>
     <button type="default" @click="getData">确定</button>
   </view>
 </template>
@@ -38,7 +45,11 @@ export default {
       swiperOptions2: {
         autoplay: true, // 自动轮播
         vertical: true // 纵向
-      }
+      },
+      title: '小地家族',
+      productList :[{
+
+      }]
     }
   },
   computed: {
@@ -75,7 +86,7 @@ ul, li {
   ul {
     display: flex;
     justify-content: space-around;
-    font-size: 16px;
+    font-size: $uni-font-size-sm;
     color: #fff;
     padding: 0 6px;
     li {
@@ -155,5 +166,71 @@ ul, li {
     align-items: center;
   }
 }
-  
+
+// product模块
+.product {
+  .title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 42rpx;
+    color: #5a961e;
+    .letter {
+      padding: 0 10px;
+      border-left: 1px solid #5a961e;
+      position: relative;
+      &:first-child {
+        &::before {
+          content: '';
+          display: block;
+          width: 35px;
+          height: 1px;
+          background: #787878;
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translate(-100%, -50%);
+        }
+        &::after {
+          content: '';
+          display: block;
+          position: absolute;
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          border: 1px solid #787878;
+          top: 50%;
+          transform: translate(0, -50%);
+          left: -45px;
+        }
+      }
+      &:last-child {
+        border-right: 1px solid #5a961e;
+        &::after {
+          content: '';
+          display: block;
+          width: 35px;
+          height: 1px;
+          background: #787878;
+          position: absolute;
+          top: 50%;
+          right: 0;
+          transform: translate(100%, -50%);
+        }
+        &::before {
+          content: '';
+          display: block;
+          position: absolute;
+          width: 8px;
+          height: 8px;
+          border-radius: 50%;
+          border: 1px solid #787878;
+          top: 50%;
+          transform: translate(0, -50%);
+          right: -45px;
+        }
+      }
+    }
+  }
+}
 </style>
