@@ -133,19 +133,7 @@ __webpack_require__.r(__webpack_exports__);
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; //
 //
 //
 //
@@ -193,29 +181,69 @@ __webpack_require__.r(__webpack_exports__);
 var _default =
 {
   data: function data() {
+    var currentDate = this.getDate({
+      format: true });
+
     return {
-      title: 'input',
-      focus: false,
-      inputValue: '',
-      changeValue: '' };
+      title: 'picker',
+      // array: ['中国', '美国', '巴西', '日本'],
+      list: [],
+      index: 0,
+      date: currentDate,
+      time: '12:01' };
 
   },
+  computed: {
+    startDate: function startDate() {
+      return this.getDate('start');
+    },
+    endDate: function endDate() {
+      return this.getDate('end');
+    },
+    array: function array() {
+      return this.list.map(function (item) {
+        return item.name;
+      });
+    } },
+
+  mounted: function mounted() {
+    this.getData();
+  },
   methods: {
-    onKeyInput: function onKeyInput(event) {
-      this.inputValue = event.target.value;
+    getData: function getData() {
+      this.list = [{
+        id: 1,
+        name: 'xx' },
+      {
+        id: 2,
+        name: 'yy' }];
+
     },
-    replaceInput: function replaceInput(event) {
-      var value = event.target.value;
-      if (value === '11') {
-        this.changeValue = '2';
-      }
+    bindPickerChange: function bindPickerChange(e) {
+      console.log('picker发送选择改变，携带值为', e.target.value);
+      this.index = e.target.value;
     },
-    hideKeyboard: function hideKeyboard(event) {
-      if (event.target.value === '123') {
-        uni.hideKeyboard();
+    bindDateChange: function bindDateChange(e) {
+      this.date = e.target.value;
+    },
+    bindTimeChange: function bindTimeChange(e) {
+      this.time = e.target.value;
+    },
+    getDate: function getDate(type) {
+      var date = new Date();
+      var year = date.getFullYear();
+      var month = date.getMonth() + 1;
+      var day = date.getDate();
+
+      if (type === 'start') {
+        year = year - 60;
+      } else if (type === 'end') {
+        year = year + 2;
       }
+      month = month > 9 ? month : '0' + month;
+      day = day > 9 ? day : '0' + day;
+      return "".concat(year, "-").concat(month, "-").concat(day);
     } } };exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 
 /***/ })
 ],[[11,"common/runtime","common/vendor"]]]);
