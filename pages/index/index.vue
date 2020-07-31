@@ -1,9 +1,13 @@
 <template>
   <view class="wrapper">
     <view class="banner">
-      <swiper class="swiper" :indicator-dots="swiperOptions.indicatorDots" :autoplay="swiperOptions.autoplay">
+      <swiper
+        class="swiper"
+        :indicator-dots="swiperOptions.indicatorDots"
+        :autoplay="swiperOptions.autoplay"
+      >
         <swiper-item v-for="(item, index) in MockData.carouselList" :key="index">
-          <img :src="item.src" alt="">
+          <img :src="item.src" alt />
         </swiper-item>
       </swiper>
     </view>
@@ -16,13 +20,19 @@
       </ul>
     </view>
     <view class="msgs">
-      <swiper class="swiper" :autoplay="swiperOptions2.autoplay" :vertical="swiperOptions2.vertical">
-        <swiper-item class="swiper-slide" v-for="(item, index) in MockData.msgs" :key="index">
-          {{item}}
-        </swiper-item>
+      <swiper
+        class="swiper"
+        :autoplay="swiperOptions2.autoplay"
+        :vertical="swiperOptions2.vertical"
+      >
+        <swiper-item
+          class="swiper-slide"
+          v-for="(item, index) in MockData.msgs"
+          :key="index"
+        >{{item}}</swiper-item>
       </swiper>
     </view>
-    <view class="product">
+    <view class="product" v-for="(item, index) in 4" :key="index">
       <view class="product-item">
         <view class="title">
           <view class="text">
@@ -34,7 +44,7 @@
           <view class="p-i" v-for="(item, index) in 2" :key="index">
             <view class="con">
               <view class="pic">
-                <img src="~@/static/img1.jpg" alt="">
+                <img src="~@/static/img1.jpg" alt />
               </view>
               <view class="info">
                 <view class="title">定制款|酷礼遇</view>
@@ -50,6 +60,19 @@
         </view>
       </view>
     </view>
+    <view class="partner">
+      <view class="title">
+        <view class="text">
+          <text class="letter" v-for="(item, index) in partnerTitle" :key="index">{{item}}</text>
+        </view>
+        <view class="more">更多>></view>
+      </view>
+      <view class="sponsor">
+        <a href="#" class="s-i" v-for="(item, index) in MockData.partnerList" :key="index">
+          <img :src="item.pic" />
+        </a>
+      </view>
+    </view>
     <button type="default" @click="getData">确定</button>
   </view>
 </template>
@@ -61,16 +84,15 @@ export default {
       MockData,
       swiperOptions: {
         indicatorDots: true, // 指示点
-        autoplay: true, // 自动轮播
+        autoplay: true // 自动轮播
       },
       swiperOptions2: {
         autoplay: true, // 自动轮播
         vertical: true // 纵向
       },
       title: '小地家族',
-      productList :[{
-
-      }]
+      productList: [{}],
+      partnerTitle: '合作伙伴'
     }
   },
   computed: {
@@ -80,12 +102,11 @@ export default {
     tagList2() {
       return MockData.tagsList.slice(4)
     }
-	},
-	mounted() {
+  },
+  mounted() {
     console.log(MockData)
-	},
-  methods: {
-  }
+  },
+  methods: {}
 }
 </script>
 <style lang="scss" scope>
@@ -93,63 +114,71 @@ export default {
 .banner {
   .swiper {
     width: 100%;
-    height: 303px;
+    height: 550rpx;
   }
 }
 // tags模块
 .tags {
-  margin-top: 13px;
+  margin-top: 26rpx;
   ul {
     display: flex;
     justify-content: space-around;
     font-size: $uni-font-size-sm;
     color: #fff;
-    padding: 0 6px;
+    padding: 0 12rpx;
     li {
-      width: calc(100% / 4 - 16px);
-      padding: 6px 9px 6px 0;
+      width: calc(100% / 4 - 10rpx);
+      padding: 10rpx 15rpx 10rpx 0;
       text-align: right;
       border: 1px solid #ccc;
-      border-radius: 4px;
-      margin-right: 8px;
+      border-radius: 8rpx;
+      margin-right: 14rpx;
       &:last-child {
         margin-right: 0;
       }
       &:nth-child(1) {
-        background: url('~@/static/resource/icon-1.png') #828c6e no-repeat left center;
-        background-size: 19px;
+        background: url('~@/static/resource/icon-1.png') #828c6e no-repeat left
+          center;
+        background-size: 30rpx;
       }
       &:nth-child(2) {
-        background: url('~@/static/resource/icon-2.png') #828c6e no-repeat left center;
-        background-size: 19px;
+        background: url('~@/static/resource/icon-2.png') #828c6e no-repeat left
+          center;
+        background-size: 30rpx;
       }
       &:nth-child(3) {
-        background: url('~@/static/resource/icon-3.png') #828c6e no-repeat left center;
-        background-size: 19px;
+        background: url('~@/static/resource/icon-3.png') #828c6e no-repeat left
+          center;
+        background-size: 30rpx;
       }
       &:nth-child(4) {
-        background: url('~@/static/resource/icon-4.png') #828c6e no-repeat left center;
-        background-size: 19px;
+        background: url('~@/static/resource/icon-4.png') #828c6e no-repeat left
+          center;
+        background-size: 30rpx;
       }
     }
     &:last-child {
-      margin-top: 6px;
+      margin-top: 10rpx;
       li {
         &:nth-child(1) {
-          background: url('~@/static/resource/icon-5.png') #828c6e no-repeat left center;
-          background-size: 19px;
+          background: url('~@/static/resource/icon-5.png') #828c6e no-repeat
+            left center;
+          background-size: 30rpx;
         }
         &:nth-child(2) {
-          background: url('~@/static/resource/icon-6.png') #828c6e no-repeat left center;
-          background-size: 19px;
+          background: url('~@/static/resource/icon-6.png') #828c6e no-repeat
+            left center;
+          background-size: 30rpx;
         }
         &:nth-child(3) {
-          background: url('~@/static/resource/icon-7.png') #828c6e no-repeat left center;
-          background-size: 19px;
+          background: url('~@/static/resource/icon-7.png') #828c6e no-repeat
+            left center;
+          background-size: 30rpx;
         }
         &:nth-child(4) {
-          background: url('~@/static/resource/icon-8.png') #828c6e no-repeat left center;
-          background-size: 19px;
+          background: url('~@/static/resource/icon-8.png') #828c6e no-repeat
+            left center;
+          background-size: 30rpx;
         }
       }
     }
@@ -174,7 +203,7 @@ export default {
       padding: 0 20px;
       overflow: hidden;
       text-overflow: ellipsis;
-      white-space: nowrap;  /*不换行*/
+      white-space: nowrap; /*不换行*/
     }
   }
   uni-swiper-item {
@@ -185,8 +214,8 @@ export default {
 
 // product模块
 .product {
-  >.product-item {
-    >.title {
+  > .product-item {
+    > .title {
       position: relative;
       padding: 20rpx 0;
       .text {
@@ -197,14 +226,14 @@ export default {
         color: #5a961e;
         position: relative;
         .letter {
-          padding: 0 10px;
+          padding: 0 20rpx;
           border-left: 1px solid #5a961e;
           position: relative;
           &:first-child {
             &::before {
               content: '';
               display: block;
-              width: 35px;
+              width: 70rpx;
               height: 1px;
               background: #787878;
               position: absolute;
@@ -216,13 +245,13 @@ export default {
               content: '';
               display: block;
               position: absolute;
-              width: 8px;
-              height: 8px;
+              width: 16rpx;
+              height: 16rpx;
               border-radius: 50%;
               border: 1px solid #787878;
               top: 50%;
               transform: translate(0, -50%);
-              left: -45px;
+              left: -90rpx;
             }
           }
           &:last-child {
@@ -230,7 +259,7 @@ export default {
             &::after {
               content: '';
               display: block;
-              width: 35px;
+              width: 70rpx;
               height: 1px;
               background: #787878;
               position: absolute;
@@ -242,13 +271,13 @@ export default {
               content: '';
               display: block;
               position: absolute;
-              width: 8px;
-              height: 8px;
+              width: 16rpx;
+              height: 16rpx;
               border-radius: 50%;
               border: 1px solid #787878;
               top: 50%;
               transform: translate(0, -50%);
-              right: -45px;
+              right: -90rpx;
             }
           }
         }
@@ -262,22 +291,22 @@ export default {
       }
     }
     .intro {
-      padding: 0 5px;
+      padding: 0 10px;
       overflow: hidden;
       .p-i {
         width: 50%;
-        height: 140px;
+        height: 280rpx;
         // border: 1px solid red;
-        padding: 0 5px;
+        padding: 0 10rpx;
         float: left;
         .con {
           width: 100%;
           height: 100%;
-          border-radius: 6px;
+          border-radius: 12rpx;
           border: 1px solid #ccc;
           .pic {
             width: 100%;
-            height: 85px;
+            height: 170rpx;
             img {
               width: 100%;
               height: 100%;
@@ -304,11 +333,11 @@ export default {
               .num {
                 color: red;
                 font-weight: bold;
-                margin: 0 2px;
+                margin: 0 4rpx;
               }
               .sell-num {
                 color: #909399;
-                margin-left: 10px;
+                margin-left: 20rpx;
               }
               .more {
                 margin-left: auto;
@@ -320,6 +349,98 @@ export default {
             }
           }
         }
+      }
+    }
+  }
+}
+
+.partner {
+  > .title {
+    position: relative;
+    padding: 20rpx 0;
+    .text {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 42rpx;
+      color: #5a961e;
+      position: relative;
+      .letter {
+        padding: 0 20rpx;
+        border-left: 1px solid #5a961e;
+        position: relative;
+        &:first-child {
+          &::before {
+            content: '';
+            display: block;
+            width: 70rpx;
+            height: 1px;
+            background: #787878;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            transform: translate(-100%, -50%);
+          }
+          &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 16rpx;
+            height: 16rpx;
+            border-radius: 50%;
+            border: 1px solid #787878;
+            top: 50%;
+            transform: translate(0, -50%);
+            left: -90rpx;
+          }
+        }
+        &:last-child {
+          border-right: 1px solid #5a961e;
+          &::after {
+            content: '';
+            display: block;
+            width: 70rpx;
+            height: 1px;
+            background: #787878;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translate(100%, -50%);
+          }
+          &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 16rpx;
+            height: 16rpx;
+            border-radius: 50%;
+            border: 1px solid #787878;
+            top: 50%;
+            transform: translate(0, -50%);
+            right: -90rpx;
+          }
+        }
+      }
+    }
+    .more {
+      position: absolute;
+      font-size: 22rpx;
+      right: 5px;
+      top: 50%;
+      transform: translate(0, -50%);
+    }
+  }
+  > .sponsor {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 34rpx;
+    > a.s-i {
+      width: 96rpx;
+      height: 96rpx;
+      > img {
+        width: 100%;
+        height: 100%;
       }
     }
   }
