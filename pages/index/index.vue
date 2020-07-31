@@ -185,135 +185,138 @@ export default {
 
 // product模块
 .product {
-  .title {
-    position: relative;
-    .text {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 42rpx;
-      color: #5a961e;
+  >.product-item {
+    >.title {
       position: relative;
-      .letter {
-        padding: 0 10px;
-        border-left: 1px solid #5a961e;
+      padding: 20rpx 0;
+      .text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 42rpx;
+        color: #5a961e;
         position: relative;
-        &:first-child {
-          &::before {
-            content: '';
-            display: block;
-            width: 35px;
-            height: 1px;
-            background: #787878;
-            position: absolute;
-            top: 50%;
-            left: 0;
-            transform: translate(-100%, -50%);
+        .letter {
+          padding: 0 10px;
+          border-left: 1px solid #5a961e;
+          position: relative;
+          &:first-child {
+            &::before {
+              content: '';
+              display: block;
+              width: 35px;
+              height: 1px;
+              background: #787878;
+              position: absolute;
+              top: 50%;
+              left: 0;
+              transform: translate(-100%, -50%);
+            }
+            &::after {
+              content: '';
+              display: block;
+              position: absolute;
+              width: 8px;
+              height: 8px;
+              border-radius: 50%;
+              border: 1px solid #787878;
+              top: 50%;
+              transform: translate(0, -50%);
+              left: -45px;
+            }
           }
-          &::after {
-            content: '';
-            display: block;
-            position: absolute;
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            border: 1px solid #787878;
-            top: 50%;
-            transform: translate(0, -50%);
-            left: -45px;
-          }
-        }
-        &:last-child {
-          border-right: 1px solid #5a961e;
-          &::after {
-            content: '';
-            display: block;
-            width: 35px;
-            height: 1px;
-            background: #787878;
-            position: absolute;
-            top: 50%;
-            right: 0;
-            transform: translate(100%, -50%);
-          }
-          &::before {
-            content: '';
-            display: block;
-            position: absolute;
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            border: 1px solid #787878;
-            top: 50%;
-            transform: translate(0, -50%);
-            right: -45px;
+          &:last-child {
+            border-right: 1px solid #5a961e;
+            &::after {
+              content: '';
+              display: block;
+              width: 35px;
+              height: 1px;
+              background: #787878;
+              position: absolute;
+              top: 50%;
+              right: 0;
+              transform: translate(100%, -50%);
+            }
+            &::before {
+              content: '';
+              display: block;
+              position: absolute;
+              width: 8px;
+              height: 8px;
+              border-radius: 50%;
+              border: 1px solid #787878;
+              top: 50%;
+              transform: translate(0, -50%);
+              right: -45px;
+            }
           }
         }
       }
+      .more {
+        position: absolute;
+        font-size: 22rpx;
+        right: 5px;
+        top: 50%;
+        transform: translate(0, -50%);
+      }
     }
-    .more {
-      position: absolute;
-      font-size: 22rpx;
-      right: 5px;
-      top: 50%;
-      transform: translate(0, -50%);
-    }
-  }
-  .intro {
-    padding: 0 5px;
-    overflow: hidden;
-    .p-i {
-      width: 50%;
-      height: 140px;
-      // border: 1px solid red;
+    .intro {
       padding: 0 5px;
-      float: left;
-      .con {
-        width: 100%;
-        height: 100%;
-        border-radius: 6px;
-        border: 1px solid #ccc;
-        .pic {
+      overflow: hidden;
+      .p-i {
+        width: 50%;
+        height: 140px;
+        // border: 1px solid red;
+        padding: 0 5px;
+        float: left;
+        .con {
           width: 100%;
-          height: 85px;
-          img {
+          height: 100%;
+          border-radius: 6px;
+          border: 1px solid #ccc;
+          .pic {
             width: 100%;
-            height: 100%;
-          }
-        }
-        .info {
-          padding: 0 20rpx;
-          .title {
-            font-size: 28rpx;
-          }
-          .describe {
-            font-size: 24rpx;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            color: #909399;
-          }
-          .price {
-            position: relative;
-            font-size: 24rpx;
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            .num {
-              color: red;
-              font-weight: bold;
-              margin: 0 2px;
+            height: 85px;
+            img {
+              width: 100%;
+              height: 100%;
             }
-            .sell-num {
+          }
+          .info {
+            padding: 0 20rpx;
+            .title {
+              font-size: 28rpx;
+            }
+            .describe {
+              font-size: 24rpx;
+              overflow: hidden;
+              text-overflow: ellipsis;
+              white-space: nowrap;
               color: #909399;
-              margin-left: 10px;
             }
-            .more {
-              margin-left: auto;
-            }
-            &::before {
-              content: '￥';
-              color: red;
+            .price {
+              position: relative;
+              font-size: 24rpx;
+              display: flex;
+              justify-content: flex-start;
+              align-items: center;
+              .num {
+                color: red;
+                font-weight: bold;
+                margin: 0 2px;
+              }
+              .sell-num {
+                color: #909399;
+                margin-left: 10px;
+              }
+              .more {
+                margin-left: auto;
+              }
+              &::before {
+                content: '￥';
+                color: red;
+              }
             }
           }
         }
