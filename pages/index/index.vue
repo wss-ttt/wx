@@ -32,26 +32,27 @@
         >{{item}}</swiper-item>
       </swiper>
     </view>
-    <view class="product" v-for="(item, index) in 4" :key="index">
+    <view class="product" v-for="(p, index) in MockData.productList" :key="index">
       <view class="product-item">
         <view class="title">
           <view class="text">
-            <text class="letter" v-for="(item, index) in title" :key="index">{{item}}</text>
+            <text class="letter" v-for="(letter, index) in p.type" :key="index">{{letter}}</text>
           </view>
           <view class="more">更多>></view>
         </view>
         <view class="intro">
-          <view class="p-i" v-for="(item, index) in 2" :key="index">
+          <view class="p-i" v-for="(item, index) in p.productList" :key="index">
             <view class="con">
               <view class="pic">
-                <img src="~@/static/img1.jpg" alt />
+                <!-- <img src="~@/static/img1.jpg" alt /> -->
+                <img :src="$BASE_URL + item.pic" alt />
               </view>
               <view class="info">
-                <view class="title">定制款|酷礼遇</view>
-                <view class="describe">办公族专享｜实价24.2元/盒/次起</view>
+                <view class="title">{{ item.title }}</view>
+                <view class="describe">{{ item.describe }}</view>
                 <view class="price">
-                  <text class="num">100</text>
-                  <view class="sell-num">1791付款</view>
+                  <text class="num">{{ item.price }}</text>
+                  <view class="sell-num">{{ sellNum(item) }}付款</view>
                   <view class="more">...</view>
                 </view>
               </view>
@@ -69,14 +70,14 @@
       </view>
       <view class="sponsor">
         <a href="#" class="s-i" v-for="(item, index) in MockData.partnerList" :key="index">
-          <img :src="item.pic" />
+          <img :src="$BASE_URL + item.pic" />
         </a>
       </view>
     </view>
     <view class="footer">
       <img src="~@/static/logo-button.png" alt="logo" />
     </view>
-    <!-- <button type="default" @click="getData">确定</button> -->
+    <button type="default" @click="test">确定</button>
   </view>
 </template>
 <script>
@@ -104,12 +105,28 @@ export default {
     },
     tagList2() {
       return MockData.tagsList.slice(4)
+    },
+    sellNum() {
+      return (o) => {
+        let xl = 0, xssl = 0
+        if(o.xl) xl = o.xl
+        if(o.xssl) xssl = o.xssl
+        return xl * 1 + xssl * 1
+      }
     }
   },
   mounted() {
     console.log(MockData)
   },
-  methods: {}
+  methods: {
+    test() {
+      console.log(this)
+      console.log(this.sellNum({
+        xl: 10,
+        xssl: null
+      }))
+    }
+  }
 }
 </script>
 <style lang="scss" scope>
