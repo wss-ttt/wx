@@ -31,7 +31,7 @@
           <view class="more">更多>></view>
         </view>
         <view class="intro">
-          <view class="p-i">
+          <view class="p-i" v-for="(item, index) in 2" :key="index">
             <view class="con">
               <view class="pic">
                 <img src="~@/static/img1.jpg" alt="">
@@ -42,7 +42,7 @@
                 <view class="price">
                   <text class="num">100</text>
                   <view class="sell-num">1791付款</view>
-                  <view class="label">...</view>
+                  <view class="more">...</view>
                 </view>
               </view>
             </view>
@@ -89,11 +89,6 @@ export default {
 }
 </script>
 <style lang="scss" scope>
-ul, li {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
 // banner 模块
 .banner {
   .swiper {
@@ -266,11 +261,13 @@ ul, li {
   }
   .intro {
     padding: 0 5px;
+    overflow: hidden;
     .p-i {
       width: 50%;
       height: 140px;
-      border: 1px solid red;
+      // border: 1px solid red;
       padding: 0 5px;
+      float: left;
       .con {
         width: 100%;
         height: 100%;
@@ -285,12 +282,39 @@ ul, li {
           }
         }
         .info {
-          .title {}
-          .describe {}
+          padding: 0 20rpx;
+          .title {
+            font-size: 28rpx;
+          }
+          .describe {
+            font-size: 24rpx;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            color: #909399;
+          }
           .price {
-            .num {}
-            .sell-num {}
-            .label {}
+            position: relative;
+            font-size: 24rpx;
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            .num {
+              color: red;
+              font-weight: bold;
+              margin: 0 2px;
+            }
+            .sell-num {
+              color: #909399;
+              margin-left: 10px;
+            }
+            .more {
+              margin-left: auto;
+            }
+            &::before {
+              content: '￥';
+              color: red;
+            }
           }
         }
       }
