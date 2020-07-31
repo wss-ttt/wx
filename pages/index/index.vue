@@ -73,7 +73,10 @@
         </a>
       </view>
     </view>
-    <button type="default" @click="getData">确定</button>
+    <view class="footer">
+      <img src="~@/static/logo-button.png" alt="logo" />
+    </view>
+    <!-- <button type="default" @click="getData">确定</button> -->
   </view>
 </template>
 <script>
@@ -303,7 +306,7 @@ export default {
           width: 100%;
           height: 100%;
           border-radius: 12rpx;
-          border: 1px solid #ccc;
+          background: #fff;
           .pic {
             width: 100%;
             height: 170rpx;
@@ -443,6 +446,17 @@ export default {
         height: 100%;
       }
     }
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 30rpx 0;
+  > img {
+    width: 145rpx;
+    height: auto;
   }
 }
 </style>
