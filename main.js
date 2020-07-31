@@ -9,3 +9,4 @@ const app = new Vue({
     ...App
 })
 app.$mount()
+Vue.prototype.$BASE_URL = 'https://m.myxiaodi.com/yrg/'
