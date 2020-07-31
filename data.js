@@ -1,3 +1,4 @@
+const BASE_URL = 'https://m.myxiaodi.com/yrg/'
 /* 首页轮播图 */
 const carouselList = [
   {
@@ -55,42 +56,98 @@ const msgs = [
   '免费开通88折会员卡，并惠及朋友，请点咨询按钮'
 ]
 
+const productList = [{
+  id: 1,
+  type: '小地家族',
+  productList: [{
+    title: '盲盒款｜酷工作', // 标题
+    pic: 'upload/files/20200715090440RVEg9HYf.jpg',
+    describe: '办公族专享｜实价24.2元/盒/次起', // 描述
+    price: 29.9, // 价格
+    xl: 10,
+    xssl: 200
+  }, {
+    title: '定制款｜酷礼遇', // 标题
+    pic: 'upload/files/20200715090602IfNUAd9w.jpg',
+    describe: '日常关系型礼品｜实价32.56元/盒/次起', // 描述
+    price: 39.9, // 价格
+    xl: 10,
+    xssl: 300
+  }]
+}, {
+  id: 2,
+  type: '二十四鲜',
+  productList: [{
+    title: '24鲜3次体验卡', // 标题
+    pic: 'upload/files/20200715113820j4NuLrJ9.jpg',
+    describe: '顺身｜顺时｜顺果', // 描述
+    price: 29.9, // 价格
+    xl: 10,
+    xssl: null
+  }, {
+    title: '二十四鲜卡', // 标题
+    pic: 'upload/files/20200715113835RUriTKaL.jpg',
+    describe: '顺应时节才是最好的营养师；24节气得240斤时令鲜果……', // 描述
+    price: 2199, // 价格
+    xl: 548,
+    xssl: null
+  }]
+}, {
+  id: 3,
+  type: '超级尊享',
+  productList: [{
+    title: '粉礼｜事半功倍', // 标题
+    pic: 'upload/files/20200418115636ULQYPpca.jpg',
+    describe: '承包您半年的水果食用量，用出类拔萃的水果！', // 描述
+    price: 9588, // 价格
+    xl: 10,
+    xssl: null
+  }, {
+    title: '兰礼｜高人一等的享受', // 标题
+    pic: 'upload/files/20200418115713BjOghDRm.jpg',
+    describe: '承包您一年的食用量，用出类拔萃的水果！', // 描述
+    price: 16888, // 价格
+    xl: 7,
+    xssl: 0
+  }]
+}]
+
 const partnerList = [
   {
     id: 1,
     name: '酉花 酉果',
     url: '#',
-    pic: 'https://m.myxiaodi.com/yrg/upload/files/20191224230859jngxI9va.jpg'
+    pic: 'upload/files/20191224230859jngxI9va.jpg'
   },
   {
     id: 2,
     name: '优美科技',
     url: '#',
-    pic: 'https://m.myxiaodi.com/yrg/upload/files/2019122423005753EFU341.jpg'
+    pic: 'upload/files/2019122423005753EFU341.jpg'
   },
   {
     id: 3,
     name: '德蒽 视界',
     url: '#',
-    pic: 'https://m.myxiaodi.com/yrg/upload/files/20191224225657n8DReQOF.jpg'
+    pic: 'upload/files/20191224225657n8DReQOF.jpg'
   },
   {
     id: 4,
     name: '自然农法',
     url: '#',
-    pic: 'https://m.myxiaodi.com/yrg/upload/files/20191224224609Q2kWWR3v.jpg'
+    pic: 'upload/files/20191224224609Q2kWWR3v.jpg'
   },
   {
     id: 5,
     name: '微妙军团',
     url: '#',
-    pic: 'https://m.myxiaodi.com/yrg/upload/files/20191224224055t9ryHaTc.jpg'
+    pic: 'upload/files/20191224224055t9ryHaTc.jpg'
   },
   {
     id: 6,
     name: '会小宝',
     url: '#',
-    pic: 'https://m.myxiaodi.com/yrg/upload/files/20191224223359BrRGJR6K.jpg'
+    pic: 'upload/files/20191224223359BrRGJR6K.jpg'
   }
 ]
 
@@ -98,5 +155,6 @@ export default {
   carouselList,
   tagsList,
   msgs,
+  productList,
   partnerList
 }
