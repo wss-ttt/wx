@@ -94,8 +94,6 @@ export default {
         autoplay: true, // 自动轮播
         vertical: true // 纵向
       },
-      title: '小地家族',
-      productList: [{}],
       partnerTitle: '合作伙伴'
     }
   },
@@ -121,10 +119,6 @@ export default {
   methods: {
     test() {
       console.log(this)
-      console.log(this.sellNum({
-        xl: 10,
-        xssl: null
-      }))
     }
   }
 }
